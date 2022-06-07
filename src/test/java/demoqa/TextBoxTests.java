@@ -1,8 +1,7 @@
 package demoqa;
 
-import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.Selenide;
-import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
@@ -13,16 +12,11 @@ import static com.codeborne.selenide.Selenide.*;
 import static io.qameta.allure.Allure.step;
 
 @Tag("demoqa")
-public class TextBoxTests {
-    @BeforeAll
-    static void setUp() {
-        Configuration.holdBrowserOpen = true;
-        Configuration.baseUrl = "https://demoqa.com";
-        Configuration.browserSize = "1920x1080";
-        Configuration.pageLoadTimeout = 45000;
-    }
+public class TextBoxTests extends TestBase {
+
 
     @Test
+    @DisplayName("Successful fill registration test")
     void fillFormTest() {
         String firstName = "first";
         String lastName = "last";
